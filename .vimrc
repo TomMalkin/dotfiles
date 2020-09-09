@@ -32,8 +32,17 @@ let g:flake8_show_in_file=1
 " --- Search ---
 Plugin 'kien/ctrlp.vim'
 
-" automatic bracket pairs
+" --- automatic bracket pairs ---
 Plugin 'jiangmiao/auto-pairs'
+
+" --- defaults polyglot ---
+Plugin 'sheerun/vim-polyglot'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'alvan/vim-closetag'
+
+" --- status bar ---
+Plugin 'vim-airline/vim-airline'
+
 
 call vundle#end()
 filetype plugin indent on
