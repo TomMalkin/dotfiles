@@ -1,4 +1,5 @@
 set nocompatible
+
 filetype off
 
 " --- Vundle Setup ---
@@ -69,13 +70,13 @@ set foldlevel=99
 syntax on
 
 " hybrid line numbers that toggle on focus
-set number relativenumber
+"set number relativenumber
 
-augroup numbertoggle
-    autocmd!
-    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-augroup End
+"augroup numbertoggle
+    "autocmd!
+    "autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+    "autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+"augroup End
 
 " enable mouse
 set mouse=a
@@ -142,19 +143,35 @@ let g:limelight_default_coefficient = 0.7
 
 " define our prose writing settings
 function! ProseMode()
+    let tommode = "prose"
     ":set colorcolumn=101
-    ":set tw=100
-    :set spell spelllang=en_au
-    :Goyo
-    :HardPencil
-    :Limelight
+    "":set tw=100
+    set spell spelllang=en_au
+    Goyo 100
+    SoftPencil
+    Limelight
+    set nonumber
+    augroup numbertoggle
+        autocmd!
+    augroup End
+    let g:airline_focuslost_inactive = 1
+    syntax off
 endfunction
 
 " define our code writing settings
 function! CodeMode()
-    :Goyo!
-    :NoPencil
-    :Limelight
-    :set nospell
+    let tommode = "code"
+    Goyo!
+    NoPencil
+    Limelight
+    set nospell
+    set number relativenumber
+    augroup numbertoggle
+        autocmd!
+        autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+        autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+    augroup End
+    let g:airline_focuslost_inactive = 0
 endfunction
 
+"call CodeMode()
