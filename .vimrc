@@ -70,13 +70,13 @@ set foldlevel=99
 syntax on
 
 " hybrid line numbers that toggle on focus
-"set number relativenumber
+set number relativenumber
 
-"augroup numbertoggle
-    "autocmd!
-    "autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
-    "autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
-"augroup End
+augroup numbertoggle
+    autocmd!
+    autocmd BufEnter,FocusGained,InsertLeave * set relativenumber
+    autocmd BufLeave,FocusLost,InsertEnter   * set norelativenumber
+augroup End
 
 " enable mouse
 set mouse=a
@@ -143,14 +143,13 @@ let g:limelight_default_coefficient = 0.7
 
 " define our prose writing settings
 function! ProseMode()
-    let tommode = "prose"
     ":set colorcolumn=101
     "":set tw=100
     set spell spelllang=en_au
     Goyo 100
     SoftPencil
     Limelight
-    set nonumber
+    set nonumber norelativenumber
     augroup numbertoggle
         autocmd!
     augroup End
@@ -160,7 +159,6 @@ endfunction
 
 " define our code writing settings
 function! CodeMode()
-    let tommode = "code"
     Goyo!
     NoPencil
     Limelight
@@ -173,5 +171,3 @@ function! CodeMode()
     augroup End
     let g:airline_focuslost_inactive = 0
 endfunction
-
-"call CodeMode()
