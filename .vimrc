@@ -30,6 +30,10 @@ Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'nvie/vim-flake8'
 let g:flake8_show_in_file=1
 
+" --- Web ---
+Plugin 'othree/html5.vim'
+Plugin 'pangloss/vim-javascript'
+
 " --- Search ---
 Plugin 'kien/ctrlp.vim'
 
