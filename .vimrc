@@ -39,6 +39,7 @@ Plugin 'kien/ctrlp.vim'
 
 " --- automatic bracket pairs ---
 Plugin 'jiangmiao/auto-pairs'
+Plugin 'tpope/vim-surround'
 
 " --- defaults polyglot ---
 Plugin 'sheerun/vim-polyglot'
