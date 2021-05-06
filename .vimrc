@@ -40,6 +40,7 @@ Plugin 'kien/ctrlp.vim'
 " --- automatic bracket pairs ---
 Plugin 'jiangmiao/auto-pairs'
 Plugin 'tpope/vim-surround'
+Plugin 'tpope/vim-repeat'
 
 " --- defaults polyglot ---
 Plugin 'sheerun/vim-polyglot'
