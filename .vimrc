@@ -57,6 +57,9 @@ Plugin 'junegunn/limelight.vim'
 " --- Prose ---
 Plugin 'reedes/vim-pencil'
 
+" --- Colour Scheme ---
+Plugin 'morhetz/gruvbox'
+
 call vundle#end()
 filetype plugin indent on
 
@@ -177,3 +180,6 @@ function! CodeMode()
     augroup End
     let g:airline_focuslost_inactive = 0
 endfunction
+
+autocmd vimenter * ++nested colorscheme gruvbox
+set background=dark
