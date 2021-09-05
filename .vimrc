@@ -60,6 +60,9 @@ Plugin 'reedes/vim-pencil'
 " --- Colour Scheme ---
 Plugin 'morhetz/gruvbox'
 
+" --- convenience ---
+Plugin 'tpope/vim-unimpaired'
+
 call vundle#end()
 filetype plugin indent on
 
