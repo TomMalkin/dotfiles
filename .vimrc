@@ -76,7 +76,7 @@ set backupdir=$HOME/.vim/backup
 
 " Enable folding
 set foldmethod=indent
-set foldlevel=99
+set foldlevel=100
 
 " general language syntax
 syntax on
@@ -112,11 +112,11 @@ set encoding=utf-8
 
 " --- Long Line Indicators ---
 " ruler
-autocmd FileType python setlocal cc=89
+autocmd FileType python setlocal cc=101
 highlight ColorColumn ctermbg=darkred ctermfg=white guifg=white
 
 " highlight over long lines
-autocmd FileType python match OverLength /\%>88v.\+/
+autocmd FileType python match OverLength /\%>100v.\+/
 highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
 
 
@@ -186,3 +186,6 @@ endfunction
 
 autocmd vimenter * ++nested colorscheme gruvbox
 set background=dark
+
+
+set textwidth=100
