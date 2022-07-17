@@ -24,11 +24,28 @@ Plugin 'jistr/vim-nerdtree-tabs'
 let NERDTreeIgnore=['\.pyc$', '\~$'] " ignore files in NERDTree
 
 " --- Python ---
-Plugin 'davidhalter/jedi-vim'
-Plugin 'psf/black'
+"Plugin 'davidhalter/jedi-vim'
+"Plugin 'psf/black'
 Plugin 'Vimjas/vim-python-pep8-indent'
-Plugin 'nvie/vim-flake8'
-let g:flake8_show_in_file=1
+"Plugin 'nvie/vim-flake8'
+"let g:flake8_show_in_file=1
+
+Plugin 'dense-analysis/ale'
+"let g:ale_fixers = {
+    "\'*': ['remove_trailing_lines', 'trim_whitespace'],
+    "\'python': ['black'],
+    "\}
+ 
+let g:ale_linters = {'python': 'all'}
+let g:ale_fixers = {'python': ['isort', 'black', 'remove_trailing_lines', 'trim_whitespace']}
+let g:ale_lsp_suggestions = 1
+"let g:ale_fix_on_save = 1
+"let g:ale_go_gofmt_options = '-s'
+"let g:ale_go_gometalinter_options = '— enable=gosimple — enable=staticcheck'
+let g:ale_completion_enabled = 1
+let g:ale_echo_msg_error_str = 'E'
+let g:ale_echo_msg_warning_str = 'W'
+let g:ale_echo_msg_format = '[%linter%] [%severity%] %code: %%s'
 
 " --- Web ---
 Plugin 'othree/html5.vim'
@@ -43,7 +60,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-repeat'
 
 " --- defaults polyglot ---
-Plugin 'sheerun/vim-polyglot'
+"Plugin 'sheerun/vim-polyglot'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'alvan/vim-closetag'
 
@@ -62,6 +79,10 @@ Plugin 'morhetz/gruvbox'
 
 " --- convenience ---
 Plugin 'tpope/vim-unimpaired'
+
+
+" --- Rust IDE ---
+"Plugin 'rust-lang/rust.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -138,8 +159,12 @@ nnoremap <C-H> <C-W><C-H>
 map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
+map <leader>d :ALEGoToDefinition<CR>
+map <leader>r :ALEFindReferences<CR>
+map <leader>h :ALEHover<CR>
+
 " run Black
-nnoremap <F9> :Black<CR>
+"nnoremap <F9> :Black<CR>
 
 " Prose Settings for limelight plugin
 " Color name (:help cterm-colors) or ANSI code
