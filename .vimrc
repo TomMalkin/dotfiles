@@ -23,6 +23,9 @@ Plugin 'preservim/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 let NERDTreeIgnore=['\.pyc$', '\~$'] " ignore files in NERDTree
 
+
+Plugin 'easymotion/vim-easymotion'
+
 " --- Python ---
 "Plugin 'davidhalter/jedi-vim'
 "Plugin 'psf/black'
@@ -214,3 +217,18 @@ set background=dark
 
 
 set textwidth=100
+
+" <Leader>f{char} to move to {char}
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+" s{char}{char} to move to {char}{char}
+nmap s <Plug>(easymotion-overwin-f2)
+
+" Move to line
+map <Leader>L <Plug>(easymotion-bd-jk)
+nmap <Leader>L <Plug>(easymotion-overwin-line)
+
+" Move to word
+map  <Leader>w <Plug>(easymotion-bd-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
