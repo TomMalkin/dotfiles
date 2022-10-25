@@ -165,6 +165,11 @@ let NERDTreeShowHidden=1
 map <leader>d :ALEGoToDefinition<CR>
 map <leader>r :ALEFindReferences<CR>
 map <leader>h :ALEHover<CR>
+map <leader>j :ALENextWrap<CR>
+map <leader>k :ALEPreviousWrap<CR>
+nnoremap <F9> :ALEFix<CR>
+
+map <leader>h :ALEFix<CR>
 
 " run Black
 "nnoremap <F9> :Black<CR>
