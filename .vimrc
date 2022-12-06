@@ -163,7 +163,8 @@ map <C-n> :NERDTreeToggle<CR>
 let NERDTreeShowHidden=1
 
 map <leader>d :ALEGoToDefinition<CR>
-map <leader>r :ALEFindReferences<CR>
+map <leader>R :ALEFindReferences<CR>
+map <leader>r :ALERename<CR>
 map <leader>h :ALEHover<CR>
 map <leader>j :ALENextWrap<CR>
 map <leader>k :ALEPreviousWrap<CR>
@@ -221,7 +222,7 @@ autocmd vimenter * ++nested colorscheme gruvbox
 set background=dark
 
 
-set textwidth=100
+"set textwidth=100
 
 " <Leader>f{char} to move to {char}
 map  <Leader>f <Plug>(easymotion-bd-f)
